@@ -2,15 +2,15 @@ name: "Estrutura de Diretórios e Arquivos"
 
 on:
   push:
-    branches: [ main ]
-  workflow_dispatch:
+    branches: [main]
+  workflow_dispatch: {}
 
 env:
-  NODE_VERSION: '18'
+  NODE_VERSION: "18"
 
 jobs:
   demonstrando-estrutura:
-    name: 'Demonstrando Estrutura Básica'
+    name: "Demonstrando Estrutura Básica"
     runs-on: ubuntu-latest
 
     steps:
@@ -22,7 +22,7 @@ jobs:
           echo " == ESTRUTURA DE DIRETORÍOS E ARQUIVOS .github/workflows =="
           ls -la .github/workflows
           echo ""
-          echo " Total de workflows: $(ls -l .github/workflows | wc -l) "
+          echo " Total de workflows: $(ls -1 .github/workflows | wc -l) "
 
       - name: Mostrar elementos obrigatórios
         run: |
@@ -35,11 +35,11 @@ jobs:
           echo ""
           echo " Total de elementos obrigatórios: 5 "
 
-      - name: Váriaveis e contextos
+      - name: Variáveis e contextos
         run: |
-          echo " == Váriaveis e contextos == "
+          echo " == Variáveis e contextos == "
           echo " Variáveis env: ${{ env.NODE_VERSION }} "
-          echo " 1. env: Definicao de váriaveis de ambiente "
+          echo " 1. env: Definicao de variáveis de ambiente "
           echo " 2. contextos: Acesso a informações do workflow, jobs, runner, etc"
           echo ""
           echo " Total de variáveis e contextos "
